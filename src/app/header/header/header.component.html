@@ -1,0 +1,21 @@
+<header id="header" class="position-relative">
+    <div class="container position-relative">
+        <div class="logo" id="logo">
+            <a href="/">
+                <img [src]="'assets/images/young-pioneer-logo.png'" alt="LOGO">
+            </a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <button id="hamburger-menu" (click)="toggleMenu()" class="hamburger-menu-button">
+                <span class="hamburger-menu-button-open" [ngClass]="{'hamburger-menu-button-close': isMenuOpen}">Menu</span>
+            </button>
+            <nav id="ham-navigation" class="ham-menu" [ngClass]="{'on': isMenuOpen}">
+                <ul class="menu">
+                    <li class="slide-mnu" [ngClass]="{'active': activeMenuItem === 'section-9'}"><a (click)="scrollToSection('section-9')">About us</a></li>
+                    <li class="slide-mnu" [ngClass]="{'active': activeMenuItem === 'section-3'}"><a (click)="scrollToSection('section-3')">Programme</a></li>
+                    <li class="slide-mnu" [ngClass]="{'active': activeMenuItem === 'section-8'}"><a (click)="scrollToSection('section-8')">Testimonials</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

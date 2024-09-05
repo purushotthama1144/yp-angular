@@ -1,0 +1,57 @@
+<div class="container position-relative section-inner">
+    <div class="section-header text-center">
+        <h2>meet the founders and experts</h2>
+    </div>
+    <div class="spacer-small"></div>
+    <div class="section-sub-header text-center">
+        The ones who put the ‘master’ in our masterclasses
+    </div>
+    <div class="spacer-small"></div>
+    <div class="section-content">
+        <owl-carousel-o [options]="foundersListing" (dragging)="isDragging = $event.dragging">
+            @for (founder of founders; track $index) {
+                <ng-container>
+                    <ng-template carouselSlide>
+                        <div class="single-founder-block">
+                            <div class="founder-image">
+                                <img [src]="founder.imageSrc" [alt]="founder.name">
+                            </div>
+                            <div class="founder-content">
+                                <div class="founder-title">
+                                    {{ founder.name }}
+                                </div>
+                                <div class="founder-designation">
+                                    {{ founder.designation }}
+                                </div>
+                                <div class="learn-more" (click)="showPopup(founder.popupId)">
+                                    LEARN MORE
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ng-container>
+            }
+        </owl-carousel-o>
+    </div>
+
+    <div *ngFor="let founder of founders" class="popup" [id]="founder.popupId" [class.visible]="activePopup === founder.popupId">
+        <div class="popup-content">
+            <span class="close-btn" (click)="closePopup()"></span>
+            <div class="two-col-block display-flex align-items-center">
+                <div class="col-left w-30 col testimonial-image">
+                    <img [src]="founder.largeImageSrc" [alt]="founder.name" class="show-desktop">
+                    <img [src]="founder.mobileImageSrc" [alt]="founder.name" class="show-mobile">
+                </div>
+                <div class="col-right col w-70">
+                    <div class="tab-content-content-block">
+                        <div class="tab-content-title">
+                            {{ founder.name }}
+                        </div>
+                        <div class="tab-content-description" [innerHTML]="founder.description">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

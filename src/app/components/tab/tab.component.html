@@ -1,0 +1,34 @@
+<div class="tab-block display-flex">
+    <div class="tab-header-block w-40 display-flex">
+        <div *ngFor="let tab of tabs; let i = index" class="tab-header"
+            [ngClass]="{'active': isActive(i)}" (click)="setActiveTab(i)">
+            <div class="tab-image-block">
+                <img [src]="tab.imageSrc" [alt]="tab.title">
+            </div>
+            <div class="tab-header-description">
+                {{ tab.title }}
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content-block w-60">
+        <ng-container *ngFor="let tab of tabs; let i = index" >
+            <div *ngIf="isActive(i)" class="tab-content position-relative two-pixel-border" [ngClass]="tab.borderColor">
+                <div class="tab-content-image-block">
+                    <img [src]="tab.contentImageSrc" [alt]="tab.title">
+                </div>
+                <div class="tab-content-content-block">
+                    <div class="tab-content-title">
+                        {{ tab.title }}
+                    </div>
+                    <div class="tab-content-description" [innerHTML]="tab.description">
+                    </div>
+                    <div *ngIf="tab.downloadLink" class="tab-download-block">
+                        <a [href]="tab.downloadLink" download target="_blank">Download a preview chapter
+                            of the coursebook</a>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
