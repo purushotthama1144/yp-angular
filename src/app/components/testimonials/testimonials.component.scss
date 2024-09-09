@@ -1,0 +1,37 @@
+.testimonials .item{
+    width: 70%;
+    margin: auto;
+}
+
+.testimonials .col-right {
+    border-left: none;
+}
+
+.testimonials .col-left img {
+    height: 100%;
+}
+
+.testimonials .col-right .tab-content-content-block {
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 80px 30px;
+}
+
+
+.testimonials .tab-content-description {
+    margin-bottom: 0;
+}
+
+.testimonials .tab-content-title {
+    margin-bottom: 0;
+}
+
+.subtitle {
+    margin-bottom: 40px;
+}
+
+.testimonials .tab-content-image-block img {
+    height: auto;
+}

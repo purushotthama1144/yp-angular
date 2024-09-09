@@ -1,0 +1,103 @@
+<div class="container position-relative section-inner">
+    <div class="section-header text-center">
+        <h2>testimonials</h2>
+    </div>
+    <div class="spacer-small"></div>
+    <div class="section-sub-header text-center">
+        Thoughts from educators and industry experts on
+        <b>Get Set Learn’s previous entrepreneurship programmes</b>
+    </div>
+    <div class="spacer-small"></div>
+    <div class="section-content testimonials">
+        <owl-carousel-o [options]="foundersListing" (dragging)="isDragging = $event.dragging">
+            <ng-container *ngFor="let founder of founders; let i = index;">
+                <ng-template carouselSlide>
+                    <div class="item">
+                        <div class="two-col-block display-flex align-items-center purple-border position-relative">
+                            <div class="col-left w-50 col testimonial-image">
+                                <img [src]="founder.image" [alt]="founder.name">
+                            </div>
+                            <div
+                                class="col-right col w-50 three-pixel-border purple-border border-bottom-right-radius-100 position-relative">
+                                <div class="tab-content-image-block">
+                                    <img src="/assets/images/ico_testimonials_commas.png" alt="fixed top right">
+                                </div>
+                                <div class="tab-content-content-block">
+                                    <div class="tab-content-title">
+                                        {{ founder.name }}
+                                    </div>
+                                    <div class="subtitle">
+                                        {{ founder.subtitle }}
+                                    </div>
+                                    <div class="tab-content-description">
+                                        {{ founder.description }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
+
+        <div class="testimonial-slider owl-carousel owl-theme">
+            <div class="item">
+                <div class="two-col-block display-flex align-items-center purple-border position-relative">
+                    <div class="col-left w-50 col testimonial-image">
+                        <img src="/assets/images/testimonials-1.png" alt="All India Quiz">
+                    </div>
+                    <div
+                        class="col-right col w-50 three-pixel-border purple-border border-bottom-right-radius-100 position-relative">
+                        <div class="tab-content-image-block">
+                            <img src="/assets/images/ico_testimonials_commas.png" alt="fixed top right">
+                        </div>
+                        <div class="tab-content-content-block">
+                            <div class="tab-content-title">
+                                Dr. Sanjay Roy
+                            </div>
+                            <div class="subtitle">
+                                Principal, Greenlawns School
+                            </div>
+                            <div class="tab-content-description">
+                                “I strongly support the Entrepreneurship Programme
+                                because it <b>expands students’ vision</b>, it expands their
+                                horizon of thinking as well as helps them come up with
+                                <b>solutions for the future</b>.
+                                If we are looking at future India becoming a world guru, I
+                                think this holds the key.”
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="two-col-block display-flex align-items-center purple-border position-relative">
+                    <div class="col-left w-50 col testimonial-image">
+                        <img src="/assets/images/testimonials_bindu.png" alt="All India Quiz">
+                    </div>
+                    <div
+                        class="col-right col w-50 three-pixel-border purple-border border-bottom-right-radius-100 position-relative">
+                        <div class="tab-content-image-block">
+                            <img src="/assets/images/ico_testimonials_commas.png" alt="fixed top right">
+                        </div>
+                        <div class="tab-content-content-block">
+                            <div class="tab-content-title">
+                                Bindu Subramaniam
+                            </div>
+                            <div class="subtitle">
+                                CEO & Founder, SaPa in Schools
+                            </div>
+                            <div class="tab-content-description">
+                                “It's very inspiring to see how passionate people are about
+                                entrepreneurship and its very inspiring to see the ideas that these high
+                                schoolers have come up with and that they put so much effort and do. And
+                                I'm truly honored to be a part of an event like this.”
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

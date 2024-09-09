@@ -2,11 +2,12 @@ import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/c
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { TabComponent } from '../tab/tab.component';
 import { FoundersComponent } from '../founders/founders.component';
+import { TestimonialsComponent } from "../testimonials/testimonials.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule , TabComponent , FoundersComponent],
+  imports: [CommonModule, TabComponent, FoundersComponent, TestimonialsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
