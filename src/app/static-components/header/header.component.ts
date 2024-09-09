@@ -41,7 +41,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.isMenuOpen = false;
       const element = document.getElementById(sectionId);
       if (element) {
-        const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - 130;
+        const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - 120;
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'

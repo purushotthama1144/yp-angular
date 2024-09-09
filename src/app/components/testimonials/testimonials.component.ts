@@ -1,5 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { Component, ElementRef, HostListener, OnInit, Renderer2 } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, HostListener, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -11,18 +11,19 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class TestimonialsComponent implements OnInit {
   isDragging: boolean = false;
+  isBrowser: boolean;
   
   founders = [
     {
       name: 'Dr. Sanjay Roy',
       subtitle: 'Principal, Greenlawns School',
-      image: '/assets/images/testimonials-1.png',
+      image: './assets/images/testimonials-1.png',
       description: '“I strongly support the Entrepreneurship Programme because it expands students’ vision, it expands their horizon of thinking as well as helps them come up with solutions for the future. If we are looking at future India becoming a world guru, I think this holds the key.”'
     },
     {
       name: 'Bindu Subramaniam',
       subtitle: 'CEO & Founder, SaPa in Schools',
-      image: '/assets/images/testimonials_bindu.png',
+      image: './assets/images/testimonials_bindu.png',
       description: '“It\'s very inspiring to see how passionate people are about entrepreneurship and its very inspiring to see the ideas that these high schoolers have come up with and that they put so much effort and do. And I\'m truly honored to be a part of an event like this.”'
     }
     // Add more testimonials as needed
@@ -50,34 +51,38 @@ export class TestimonialsComponent implements OnInit {
     }
   };
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object , private el: ElementRef, private renderer: Renderer2) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   ngOnInit(): void {
     this.adjustColumnHeights()
   }
 
   adjustColumnHeights() {
-    const windowWidth = window.innerWidth;
-    const testimonialColumns = this.el.nativeElement.querySelectorAll('.testimonials .two-col-block .col');
-
-    if (windowWidth >= 810) {
-      let maxHeight = 0;
-
-      testimonialColumns.forEach((col: HTMLElement) => {
-        const colHeight = col.offsetHeight;
-        if (colHeight > maxHeight) {
-          maxHeight = colHeight;
-        }
-      });
-
-      testimonialColumns.forEach((col: HTMLElement) => {
-        this.renderer.setStyle(col, 'height', `${maxHeight}px`);
-      });
-
-    } else {
-      testimonialColumns.forEach((col: HTMLElement) => {
-        this.renderer.setStyle(col, 'height', 'auto');
-      });
+    if (this.isBrowser) { 
+      const windowWidth = window.innerWidth;
+      const testimonialColumns = this.el.nativeElement.querySelectorAll('.testimonials .two-col-block .col');
+  
+      if (windowWidth >= 810) {
+        let maxHeight = 0;
+  
+        testimonialColumns.forEach((col: HTMLElement) => {
+          const colHeight = col.offsetHeight;
+          if (colHeight > maxHeight) {
+            maxHeight = colHeight;
+          }
+        });
+  
+        testimonialColumns.forEach((col: HTMLElement) => {
+          this.renderer.setStyle(col, 'height', `${maxHeight}px`);
+        });
+  
+      } else {
+        testimonialColumns.forEach((col: HTMLElement) => {
+          this.renderer.setStyle(col, 'height', 'auto');
+        });
+      }
     }
   }
 

@@ -1,3 +1,90 @@
 li {
     cursor: pointer;
 }
+
+.schedule-call {
+    cursor: pointer;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-lr;
+    text-align: center;
+    background: var(--color-green);
+    color: var(--color-white);
+    padding: 15px 10px;
+    border-radius: 0px 5px 5px 0px;
+    font-size: var(--font-size-14);
+    font-weight: 600;
+}
+
+.fixed-menu {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 30px;
+}
+
+.fixed-menu-dots span {
+    margin: 10px;
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid var(--color-green);
+}
+
+.fixed-menu-dots .active span {
+    border: 2px solid var(--color-light-blue);
+}
+
+.schedule-call-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    background: var(--color-white);
+    width: 55%;
+    z-index: 10;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 30px;
+}
+
+.close-btn {
+    z-index: 15;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    background-image: url("../../../assets/images/close.png");
+}
+
+.fixed-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: 0.6;
+    z-index: 3;
+}
+
+.note {
+    color: #FF0606;
+    font-size: var(--font-size-12);
+}
+
+.schedule-call-form h2 {
+    font-size: var(--font-size-24);
+}

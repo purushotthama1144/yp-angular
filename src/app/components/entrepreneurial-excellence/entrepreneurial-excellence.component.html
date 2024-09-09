@@ -1,0 +1,23 @@
+<div class="section-content">
+    <div *ngFor="let step of steps">
+      <div [ngClass]="step.layoutClass + ' display-flex align-items-center ' + step.borderClass + ' two-pixel-border'">
+        <div class="col-right w-50">
+          <div class="tab-content-content-block">
+            <div class="tab-content-title">
+              {{ step.title }}
+            </div>
+            <div class="tab-content-description">
+              {{ step.description }}
+              <ul>
+                <li *ngFor="let point of step.points">{{ point }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-left w-50">
+          <img [src]="step.image" [alt]="step.altText">
+        </div>
+      </div>
+      <div class="spacer-medium"></div>
+    </div>
+  </div>  
