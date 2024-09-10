@@ -26,7 +26,6 @@ export class TestimonialsComponent implements OnInit {
       image: './assets/images/testimonials_bindu.png',
       description: '“It\'s very inspiring to see how passionate people are about entrepreneurship and its very inspiring to see the ideas that these high schoolers have come up with and that they put so much effort and do. And I\'m truly honored to be a part of an event like this.”'
     }
-    // Add more testimonials as needed
   ];
 
   foundersListing = {

@@ -56,19 +56,12 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  scheduleCall() {
-    this.schedule_call = true;
-  }
-  
-  closeScheduleCall() {
-    this.schedule_call = false;
+  receiveScheduleCallStatus(status: boolean) {
+    console.log('Received status from child:', status);
   }
 
-  @HostListener('window:click', ['$event'])
-  onWindowClick(event: Event) {
-    const target = event.target as HTMLElement;
-    if (target.classList.contains('active-schedule')) {
-      this.schedule_call = false;
-    } 
+  toggleScheduleCall() {
+    this.schedule_call = !this.schedule_call;
   }
+
 }
