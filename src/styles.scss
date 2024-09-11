@@ -68,6 +68,12 @@ body {
     font-weight: 400;
 }
 
+.mdc-text-field mat-label {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    font-size: var(--font-size-14);
+}
+
 body {
     overflow-x: hidden;
     /* background: linear-gradient(262deg, rgba(6, 149, 211, 0.12) 6.33%, rgba(247, 201, 246, 0.50) 93.67%, rgba(247, 201, 246, 0.50) 93.67%) !important; */
@@ -1814,3 +1820,5 @@ img {
         width: 85%;
     }
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

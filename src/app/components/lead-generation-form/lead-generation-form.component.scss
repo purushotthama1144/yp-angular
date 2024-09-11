@@ -2,7 +2,6 @@ select,
 input[type="text"],
 textarea {
     width: 100%;
-    padding: 8px 10px;
     font-size: 14px;
     background: none;
     border: 2px solid var(--color-black);
@@ -20,11 +19,15 @@ textarea {
 }
 
 .zcwf_col_fld {
-    margin: 3px;
+    padding: 2px 5px;
+    width: 100%;
 }
 
-.w-23 {
-    width: 304px;
+.mat-mdc-form-field {
+    width: 100%;
+}
+textarea {
+    height: 184px !important;
 }
 
 input[type="reset"] {
