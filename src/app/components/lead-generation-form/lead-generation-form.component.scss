@@ -85,6 +85,11 @@ input[type="reset"] {
     background-image: url("../../../assets/images/close.png");
 }
 
+.schedule-call-form .section-inner {
+    height: 420px;
+    overflow-y: auto;
+}
+
 .note {
     color: #FF0606;
     font-size: var(--font-size-12);
@@ -93,7 +98,6 @@ input[type="reset"] {
 .schedule-call-form h2 {
     font-size: var(--font-size-24);
 }
-
 
 .fixed-bg {
     width: 100%;
