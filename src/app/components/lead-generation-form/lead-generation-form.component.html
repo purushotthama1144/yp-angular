@@ -271,7 +271,7 @@
                                         <div class="zcwf_col_fld">
                                             <mat-form-field class="formName forminr" appearance="outline">
                                                 <mat-label>Choose a date</mat-label>
-                                                <input matInput [matDatepicker]="picker" formControlName="selected_date">
+                                                <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myFilter" formControlName="selected_date">
                                                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                                                 <mat-datepicker #picker></mat-datepicker>
                                                 <mat-error>Please select the date</mat-error>

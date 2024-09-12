@@ -7,6 +7,7 @@ import { FormControl, FormGroup, FormGroupDirective, FormsModule, NgForm, Reacti
 import moment from 'moment';
 import { ErrorStateMatcher, MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
+import { LeadGenerationService } from '../../service/lead-generation.service';
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -46,6 +47,22 @@ export class LeadGenerationFormComponent {
     '06PM to 07PM',
   ]
 
+  disabledDates = [
+    new Date(2024, 8, 15), // September 15, 2024
+    new Date(2024, 8, 16), // September 16, 2024
+    new Date(2024, 8, 20)  // September 20, 2024
+  ];
+
+  // Disable specific dates
+  myFilter = (d: Date | null): boolean => {
+    const date = d || new Date();
+    return !this.disabledDates.some(disabledDate =>
+      disabledDate.getFullYear() === date.getFullYear() &&
+      disabledDate.getMonth() === date.getMonth() &&
+      disabledDate.getDate() === date.getDate()
+    );
+  };
+
   @Input() schedule_call: boolean | undefined;
   @Output() scheduleCallStatusChanged = new EventEmitter<boolean>();
   
@@ -75,7 +92,7 @@ export class LeadGenerationFormComponent {
     time_slot: new FormControl('', Validators.required),
   });
 
-  
+
   // registrationForm = new FormGroup({
   //   firstName: new FormControl('', [
   //     Validators.required,
@@ -102,9 +119,32 @@ export class LeadGenerationFormComponent {
   //   timeSlot: new FormControl('', Validators.required),
   // });
 
+  constructor(private leadGenerationService:LeadGenerationService){}
+
   onSubmit() {
     if (this.registrationForm.valid) {
-      console.log(this.registrationForm.value);
+      const selectedDate = this.registrationForm.value.selected_date.toLocaleString()
+      const dateOnly = selectedDate.split(',')[0];
+      const payload = {
+        first_name: this.registrationForm.value.first_name,
+        last_name: this.registrationForm.value.last_name,
+        email: this.registrationForm.value.email_id,
+        phone: this.registrationForm.value.phone_number,
+        school_name: this.registrationForm.value.school_name,
+        board: this.registrationForm.value.board,
+        city: this.registrationForm.value.city,
+        state: this.registrationForm.value.state,
+        designation: this.registrationForm.value.designation,
+        comments: this.registrationForm.value.comments,
+        selected_date: dateOnly,
+        time_slot: this.registrationForm.value.time_slot,
+      }
+      
+      this.leadGenerationService.sendFormData(payload).subscribe((response) => {
+        console.log(response)
+      }, (error) => {
+        console.log(error)
+      })
     } else {
       console.log('Form is invalid');
     }
