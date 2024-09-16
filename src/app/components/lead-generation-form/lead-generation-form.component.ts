@@ -30,12 +30,13 @@ export class LeadGenerationFormComponent {
   startDate = "";
   endDate = "";
   minDate = moment().toDate();
+  successPopup:boolean = false;
 
   boards = [
     'State', 'CBSE' , 'IB', 'ICSE', 'Others'
   ]
 
-  availableSlots = [
+  timeSlots = [
     '10AM to 11AM',
     '11AM to 12PM',
     '12PM to 01PM',
@@ -53,7 +54,6 @@ export class LeadGenerationFormComponent {
     new Date(2024, 8, 20)  // September 20, 2024
   ];
 
-  // Disable specific dates
   myFilter = (d: Date | null): boolean => {
     const date = d || new Date();
     return !this.disabledDates.some(disabledDate =>
@@ -122,26 +122,28 @@ export class LeadGenerationFormComponent {
   constructor(private leadGenerationService:LeadGenerationService){}
 
   onSubmit() {
-    if (this.registrationForm.valid) {
-      const selectedDate = this.registrationForm.value.selected_date.toLocaleString()
-      const dateOnly = selectedDate.split(',')[0];
-      const payload = {
-        first_name: this.registrationForm.value.first_name,
-        last_name: this.registrationForm.value.last_name,
-        email: this.registrationForm.value.email_id,
-        phone: this.registrationForm.value.phone_number,
-        school_name: this.registrationForm.value.school_name,
-        board: this.registrationForm.value.board,
-        city: this.registrationForm.value.city,
-        state: this.registrationForm.value.state,
-        designation: this.registrationForm.value.designation,
-        comments: this.registrationForm.value.comments,
-        selected_date: dateOnly,
-        time_slot: this.registrationForm.value.time_slot,
-      }
-      
+    const selectedDate = this.registrationForm.value.selected_date.toLocaleString()
+    const dateOnly = selectedDate.split(',')[0];
+    const payload = {
+      first_name: this.registrationForm.value.first_name,
+      last_name: this.registrationForm.value.last_name,
+      email: this.registrationForm.value.email_id,
+      phone: this.registrationForm.value.phone_number,
+      school_name: this.registrationForm.value.school_name,
+      board: this.registrationForm.value.board,
+      city: this.registrationForm.value.city,
+      state: this.registrationForm.value.state,
+      designation: this.registrationForm.value.designation,
+      comments: this.registrationForm.value.comments,
+      selected_date: dateOnly,
+      time_slot: this.registrationForm.value.time_slot,
+    }
+    if (this.registrationForm.valid) {  
       this.leadGenerationService.sendFormData(payload).subscribe((response) => {
         console.log(response)
+        if(response) {
+          this.successPopup = true;
+        }
       }, (error) => {
         console.log(error)
       })
@@ -160,6 +162,10 @@ export class LeadGenerationFormComponent {
     } else {
       this.scheduleCallStatusChanged.emit(false);
     }
+  }
+
+  closePopup() {
+    this.successPopup = false;
   }
 
   @HostListener('window:click', ['$event'])

@@ -144,163 +144,182 @@
     </div>
 } -->
 
-
 @if (schedule_call) {
-    <div class="fixed-bg" [ngClass]="{'active-schedule': schedule_call}"></div>
-    <div>
-        <div class="section schedule-call-form">
-            <div class="position-relative section-inner">
-                <div class="close-btn" (click)="notifyParent()"></div>
-                <div class="section-header text-center">
-                    <h2>Schedule a Call Back</h2>
-                    <div class="note">Note - Disabled gray colored dates /Time Slots are already booked</div>
-                </div>
-                <div class="spacer-small"></div>
-                <div class="section-content">
-                    <div class="form-block">
-                        <div class=''>
-                            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-                                <div class="display-flex">
-                                    <div class="zcwf_row w-50">
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formName forminr" appearance="outline">
-                                                <mat-label>First Name</mat-label>
-                                                <input type="text" matInput formControlName="first_name" placeholder="First Name">
-                                                <mat-error>First Name is Required</mat-error>
-                                            </mat-form-field> 
-                                        </div>
-                                    </div>
-                    
-                                    <div class="zcwf_row w-50">
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formName forminr" appearance="outline">
-                                                <mat-label>Last Name</mat-label>
-                                                <input type="text" matInput formControlName="last_name" placeholder="Last Name">
-                                                <mat-error>Last Name is Required</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
+<div class="fixed-bg" [ngClass]="{'active-schedule': schedule_call}"></div>
+<div class="schedule-call-form">
+    <div class="position-relative section-inner">
+        <div class="close-btn" (click)="notifyParent()"></div>
+        <div class="section-header text-center">
+            <h2>Schedule a Call Back</h2>
+            <div class="note">Note - Disabled gray colored dates /Time Slots are already booked</div>
+        </div>
+        <div class="spacer-small"></div>
+        <div class="section-content">
+            <div class="form-block">
+                <div class=''>
+                    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                        <div class="display-flex">
+                            <div class="zcwf_row w-50">
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formName forminr" appearance="outline">
+                                        <mat-label>First Name</mat-label>
+                                        <input type="text" matInput formControlName="first_name"
+                                            placeholder="First Name">
+                                        <mat-error>First Name is Required</mat-error>
+                                    </mat-form-field>
                                 </div>
-                    
-                                <div class="display-flex">
-                                    <div class="zcwf_row w-50">
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formName forminr" appearance="outline">
-                                                <mat-label>Email</mat-label>
-                                                <input type="text" matInput formControlName="email_id" placeholder="Email">
-                                                <mat-error>Email is Required</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
-                    
-                                    <div class="zcwf_row w-50">
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formName forminr" appearance="outline">
-                                                <mat-label>Mobile Number</mat-label>
-                                                <input type="text" matInput formControlName="phone_number" placeholder="Phone">
-                                                <mat-error>Mobile Number is Required</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
 
-                                <div class="display-flex">
-                                    <div class="zcwf_row w-50">
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formName forminr" appearance="outline">
-                                                <mat-label>School Name</mat-label>
-                                                <input type="text" matInput formControlName="school_name" placeholder="School Name">
-                                                <mat-error>School Name is Required</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="zcwf_row w-50">
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formEmail forminr" appearance="outline">
-                                                <mat-label>Board</mat-label>
-                                                <mat-select formControlName="board" matNativeControl placeholder="Board">
-                                                    <mat-option *ngFor="let board of boards" [value]="board">
-                                                        {{board}}
-                                                    </mat-option>
-                                                </mat-select>
-                                                <mat-error>Please select the Board</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
+                            <div class="zcwf_row w-50">
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formName forminr" appearance="outline">
+                                        <mat-label>Last Name</mat-label>
+                                        <input type="text" matInput formControlName="last_name" placeholder="Last Name">
+                                        <mat-error>Last Name is Required</mat-error>
+                                    </mat-form-field>
                                 </div>
-                    
-                                <div class="display-flex">
-                                    <div class="zcwf_row w-50">
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formName forminr" appearance="outline">
-                                                <mat-label>City</mat-label>
-                                                <input type="text" matInput formControlName="city" placeholder="City">
-                                                <mat-error>City is Required</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formName forminr" appearance="outline">
-                                                <mat-label>State</mat-label>
-                                                <input type="text" matInput formControlName="state" placeholder="State">
-                                                <mat-error>State is Required</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formName forminr" appearance="outline">
-                                                <mat-label>Designation</mat-label>
-                                                <input type="text" matInput formControlName="designation" placeholder="Designation">
-                                                <mat-error>Designation is Required</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="zcwf_row w-50">
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formName forminr" appearance="outline">
-                                                <mat-label>Comments</mat-label>
-                                                <textarea matInput formControlName="comments" placeholder="Comments"></textarea>
-                                                <mat-error>Comments are Required</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="display-flex">
-                                    <div class="zcwf_row w-50">
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formName forminr" appearance="outline">
-                                                <mat-label>Choose a date</mat-label>
-                                                <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myFilter" formControlName="selected_date">
-                                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                                                <mat-datepicker #picker></mat-datepicker>
-                                                <mat-error>Please select the date</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
-                        
-                                    <div class="zcwf_row w-50">
-                                        <div class="zcwf_col_fld">
-                                            <mat-form-field class="formEmail forminr" appearance="outline">
-                                                <mat-label>Select Time Slots</mat-label>
-                                                <mat-select formControlName="time_slot" matNativeControl placeholder="Board">
-                                                    <mat-option *ngFor="let slot of availableSlots" [value]="slot">
-                                                        {{slot}}
-                                                    </mat-option>
-                                                </mat-select>
-                                                <mat-error>Please select the time_slots</mat-error>
-                                            </mat-form-field>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="text-center">
-                                    <button type="submit" [disabled]="registrationForm.invalid" class="formsubmit btn">Submit</button>
-                                </div>
-                            </form>
+                            </div>
                         </div>
-                    </div>
+
+                        <div class="display-flex">
+                            <div class="zcwf_row w-50">
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formName forminr" appearance="outline">
+                                        <mat-label>Email</mat-label>
+                                        <input type="text" matInput formControlName="email_id" placeholder="Email">
+                                        <mat-error>Email is Required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="zcwf_row w-50">
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formName forminr" appearance="outline">
+                                        <mat-label>Mobile Number</mat-label>
+                                        <input type="text" matInput formControlName="phone_number" placeholder="Phone">
+                                        <mat-error>Mobile Number is Required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="display-flex">
+                            <div class="zcwf_row w-50">
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formName forminr" appearance="outline">
+                                        <mat-label>School Name</mat-label>
+                                        <input type="text" matInput formControlName="school_name"
+                                            placeholder="School Name">
+                                        <mat-error>School Name is Required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="zcwf_row w-50">
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formEmail forminr" appearance="outline">
+                                        <mat-label>Board</mat-label>
+                                        <mat-select formControlName="board" matNativeControl placeholder="Board">
+                                            <mat-option *ngFor="let board of boards" [value]="board">
+                                                {{board}}
+                                            </mat-option>
+                                        </mat-select>
+                                        <mat-error>Please select the Board</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="display-flex">
+                            <div class="zcwf_row w-50">
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formName forminr" appearance="outline">
+                                        <mat-label>City</mat-label>
+                                        <input type="text" matInput formControlName="city" placeholder="City">
+                                        <mat-error>City is Required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formName forminr" appearance="outline">
+                                        <mat-label>State</mat-label>
+                                        <input type="text" matInput formControlName="state" placeholder="State">
+                                        <mat-error>State is Required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formName forminr" appearance="outline">
+                                        <mat-label>Designation</mat-label>
+                                        <input type="text" matInput formControlName="designation"
+                                            placeholder="Designation">
+                                        <mat-error>Designation is Required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="zcwf_row w-50">
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formName forminr" appearance="outline">
+                                        <mat-label>Comments</mat-label>
+                                        <textarea matInput formControlName="comments" placeholder="Comments"></textarea>
+                                        <mat-error>Comments are Required</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="display-flex">
+                            <div class="zcwf_row w-50">
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formName forminr" appearance="outline">
+                                        <mat-label>Choose a date</mat-label>
+                                        <input matInput [matDatepicker]="picker" [matDatepickerFilter]="myFilter"
+                                            formControlName="selected_date">
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
+                                        <mat-error>Please select the date</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="zcwf_row w-50">
+                                <div class="zcwf_col_fld">
+                                    <mat-form-field class="formEmail forminr" appearance="outline">
+                                        <mat-label>Select Time Slots</mat-label>
+                                        <mat-select formControlName="time_slot" matNativeControl placeholder="Board">
+                                            <mat-option *ngFor="let slot of timeSlots" [value]="slot">
+                                                {{slot}}
+                                            </mat-option>
+                                        </mat-select>
+                                        <mat-error>Please select the time_slots</mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" [disabled]="registrationForm.invalid"
+                                class="formsubmit btn">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+}
+
+@if(successPopup) {
+    <div class="schedule-call-form success_message">
+        <div class="close-btn" (click)="closePopup()"></div>
+        <div class="section-header text-center">
+            <h2>Schedule a Call Back</h2>
+            <div class="request-message">Request Registered Successfully !</div>
+            <div class="notification-message">
+                We Will Get Back to you with Email/SMS for confirmation.
+            </div>
+        </div>
+
+        <div class="text-center">
+            <div class="formsubmit btn" (click)="closePopup()">Close</div>
         </div>
     </div>
 }

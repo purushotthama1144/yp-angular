@@ -26,6 +26,7 @@ textarea {
 .mat-mdc-form-field {
     width: 100%;
 }
+
 textarea {
     height: 184px !important;
 }
@@ -61,14 +62,14 @@ input[type="reset"] {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     background: var(--color-white);
     width: 55%;
     z-index: 10;
     padding: 20px;
     margin: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 30px;
+    border-radius: 20px;
 }
 
 .close-btn {
@@ -110,4 +111,22 @@ input[type="reset"] {
     background-color: #000;
     opacity: 0.6;
     z-index: 3;
+}
+
+.success_message {
+    width: 40%;
+}
+
+.request-message {
+    color: var(--color-green);
+    font-size: var(--font-size-20);
+    letter-spacing: 1px;
+    margin: 20px 0;
+}
+
+.notification-message {
+    width: 50%;
+    margin: auto;
+    margin-bottom: auto;
+    margin-bottom: 20px;
 }
