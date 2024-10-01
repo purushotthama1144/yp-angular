@@ -46,7 +46,7 @@ export class LeadGenerationFormComponent {
     '04PM to 05PM',
     '05PM to 06PM',
     '06PM to 07PM',
-  ]
+  ];
 
   disabledDates = [
     new Date(2024, 8, 15), // September 15, 2024
@@ -92,6 +92,10 @@ export class LeadGenerationFormComponent {
     time_slot: new FormControl('', Validators.required),
   });
 
+  resetForm() {
+    this.registrationForm.reset();
+  }
+
 
   // registrationForm = new FormGroup({
   //   firstName: new FormControl('', [
@@ -122,33 +126,35 @@ export class LeadGenerationFormComponent {
   constructor(private leadGenerationService:LeadGenerationService){}
 
   onSubmit() {
-    const selectedDate = this.registrationForm.value.selected_date.toLocaleString()
-    const dateOnly = selectedDate.split(',')[0];
+    const selectedDate = new Date(this.registrationForm.value.selected_date);
+    const formattedDate = selectedDate.toISOString().split('T')[0];
+
     const payload = {
       first_name: this.registrationForm.value.first_name,
       last_name: this.registrationForm.value.last_name,
-      email: this.registrationForm.value.email_id,
-      phone: this.registrationForm.value.phone_number,
+      email_id: this.registrationForm.value.email_id,
+      mobile: this.registrationForm.value.phone_number,
       school_name: this.registrationForm.value.school_name,
       board: this.registrationForm.value.board,
       city: this.registrationForm.value.city,
       state: this.registrationForm.value.state,
       designation: this.registrationForm.value.designation,
       comments: this.registrationForm.value.comments,
-      selected_date: dateOnly,
+      date: formattedDate,
       time_slot: this.registrationForm.value.time_slot,
     }
+
     if (this.registrationForm.valid) {  
       this.leadGenerationService.sendFormData(payload).subscribe((response) => {
-        console.log(response)
         if(response) {
+          this.scheduleCallStatusChanged.emit(false);
           this.successPopup = true;
         }
       }, (error) => {
-        console.log(error)
+        alert("Something went wrong")
       })
     } else {
-      console.log('Form is invalid');
+      alert("Form has no valid data")
     }
   }
 
@@ -157,7 +163,6 @@ export class LeadGenerationFormComponent {
     const isAnyFieldFilled = Object.values(formValues).some(value => value !== null && value !== undefined && value.trim() !== '');
 
     if (isAnyFieldFilled) {
-      console.log('Form Values:', formValues);
       this.scheduleCallStatusChanged.emit(true);
     } else {
       this.scheduleCallStatusChanged.emit(false);
@@ -176,7 +181,6 @@ export class LeadGenerationFormComponent {
       const isAnyFieldFilled = Object.values(formValues).some(value => value !== null && value !== undefined && value.trim() !== '');
 
       if (isAnyFieldFilled) {
-        console.log('Form Values:', formValues);
         this.scheduleCallStatusChanged.emit(true);
       } else {
         this.scheduleCallStatusChanged.emit(false);

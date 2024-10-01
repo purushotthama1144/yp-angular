@@ -48,7 +48,8 @@
                 <div class="banner-button-block">
                     <div class="green-button menu">
                         <li>
-                            <a style="width: 100%;" (click)="toggleScheduleCall()">GET STARTED</a>
+                            <a style="width: 100%;">GET STARTED</a>
+                            <!-- <a style="width: 100%;" (click)="toggleScheduleCall()">GET STARTED</a> -->
                         </li>
                         <div class="horizontal-border"></div>
                         <a href="https://www.youngpioneers.in/brochure.pdf" target="_blank" download>Download
@@ -73,8 +74,16 @@
             </div>
         </div>
     </div>
-    <div class="schedule-call" (click)="toggleScheduleCall()">Schedule a Call Back</div>
-    <app-lead-generation-form [schedule_call]="schedule_call" (scheduleCallStatusChanged)="receiveScheduleCallStatus($event)"></app-lead-generation-form>
+    <!-- <div class="schedule-call" (click)="toggleScheduleCall()">Schedule a Call Back</div> -->
+    <!-- <app-lead-generation-form [schedule_call]="schedule_call" (scheduleCallStatusChanged)="receiveScheduleCallStatus($event)"></app-lead-generation-form> -->
+    <div class="spacer"></div>
+    <div id="section-2" class="section programme">
+        <div class="container position-relative section-inner">
+            <div class="section-content">
+                <app-lead-generation-form></app-lead-generation-form>
+            </div>
+        </div>
+    </div>
     <div class="spacer"></div>
     <div id="section-3" class="section programme">
         <div class="container position-relative section-inner">
@@ -97,280 +106,280 @@
             </div>
         </div>
     </div>
-</div>
-<div class="spacer"></div>
-<div id="section-4" class="section masterclass-strategies">
-    <div class="container position-relative">
-        <div class="border-radius pink"></div>
-        <div
-            class="masterclass-strategies-background border-bottom-right-radius-50 border-top-left-radius-50 position-relative">
-            <div class="masterclass-strategies-banner-content">
-                <div class="w-40">
-                    <div class="masterclass-strategies-title">
-                        <h3>a masterclass in entrepreneurial strategies</h3>
+    <div class="spacer"></div>
+    <div id="section-4" class="section masterclass-strategies">
+        <div class="container position-relative">
+            <div class="border-radius pink"></div>
+            <div
+                class="masterclass-strategies-background border-bottom-right-radius-50 border-top-left-radius-50 position-relative">
+                <div class="masterclass-strategies-banner-content">
+                    <div class="w-40">
+                        <div class="masterclass-strategies-title">
+                            <h3>a masterclass in entrepreneurial strategies</h3>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="spacer-small"></div>
-        <div class="strategies-content-section display-flex">
-            <div class="w-50 space-right-20">
-                We host <b>online monthly masterclasses</b> facilitated by startup
-                founders and industry experts with a wealth of experience. The
-                masterclasses are designed to equip students with essential
-                entrepreneurial skills, focusing on identifying opportunities,
-                developing ideas, and tackling business challenges.
+            <div class="spacer-small"></div>
+            <div class="strategies-content-section display-flex">
+                <div class="w-50 space-right-20">
+                    We host <b>online monthly masterclasses</b> facilitated by startup
+                    founders and industry experts with a wealth of experience. The
+                    masterclasses are designed to equip students with essential
+                    entrepreneurial skills, focusing on identifying opportunities,
+                    developing ideas, and tackling business challenges.
+                </div>
+                <div class="w-50 space-left-20">
+                    Students are given the opportunity to gain comprehensive
+                    insights through <b>engaging activities and real-world examples</b>,
+                    instilling confidence in their ability to adapt and innovate,
+                    fostering a culture of lifelong learning and exploration.
+                </div>
             </div>
-            <div class="w-50 space-left-20">
-                Students are given the opportunity to gain comprehensive
-                insights through <b>engaging activities and real-world examples</b>,
-                instilling confidence in their ability to adapt and innovate,
-                fostering a culture of lifelong learning and exploration.
-            </div>
-        </div>
 
-    </div>
-</div>
-<div class="spacer"></div>
-<div id="section-5" class="section founders-experts">
-    <app-founders></app-founders>
-</div>
-<div class="spacer"></div>
-<div id="section-6" class="section showcase-excellence">
-    <div class="container position-relative section-inner">
-        <div class="section-header text-center">
-            <h2>a showcase of entrepreneurial excellence</h2>
-        </div>
-        <div class="spacer-small"></div>
-        <div class="section-sub-header text-center">
-            We offer students a platform to showcase their entrepreneurial
-            ideas and competencies at a national level in three challenging
-            stages, designed to foster collaboration, networking and
-            presentation skills.
-        </div>
-        <div class="spacer-small"></div>
-        <app-entrepreneurial-excellence></app-entrepreneurial-excellence>
-    </div>
-</div>
-<div class="spacer"></div>
-<div id="section-7" class="section skill-set">
-    <div class="container position-relative section-inner">
-        <div class="section-header text-center">
-            <h2>students develop a skill-set for entrepreneurial thinking</h2>
-        </div>
-        <div class="spacer-small"></div>
-        <div class="section-sub-header text-center">
-            We equip students with the essential skills needed to approach
-            challenges with an entrepreneurial mindset, fostering a culture of
-            continuous learning and exploration.
-        </div>
-        <div class="spacer-small"></div>
-        <div class="section-content">
-            <div class="five-column-block display-flex">
-                <div class="w-20 text-center">
-                    <div class="tab-image-block">
-                        <img src="./assets/images/ico_skills_criticalthinking.png" alt="Critical Thinking">
-                    </div>
-                    <div class="tab-header-description">
-                        Critical Thinking
-                    </div>
-                </div>
-                <div class="w-20 text-center">
-                    <div class="tab-image-block">
-                        <img src="./assets/images/ico_strategic_planning.png" alt="Strategic Planning">
-                    </div>
-                    <div class="tab-header-description">
-                        Strategic Planning
-                    </div>
-                </div>
-                <div class="w-20 text-center">
-                    <div class="tab-image-block">
-                        <img src="./assets/images/ico_skills_problemsolvin.png" alt="Problem Solving">
-                    </div>
-                    <div class="tab-header-description">
-                        Problem Solving
-                    </div>
-                </div>
-                <div class="w-20 text-center">
-                    <div class="tab-image-block">
-                        <img src="./assets/images/ico_skills_projectmgt.png" alt="Project Management">
-                    </div>
-                    <div class="tab-header-description">
-                        Project Management
-                    </div>
-                </div>
-                <div class="w-20 text-center">
-                    <div class="tab-image-block">
-                        <img src="./assets/images/ico_course_leadershipskills.png" alt="Leadership Skills">
-                    </div>
-                    <div class="tab-header-description">
-                        Leadership Skills
-                    </div>
-                </div>
-            </div>
-            <div class="spacer"></div>
-            <div class="timeline-block position-relative green-border two-pixel-border border-top-right-radius-100">
-                <div class="tab-content-image-block">
-                    <img src="./assets/images/ico_enthreprinor.png" alt="">
-                </div>
-                <div class="tab-content-content-block">
-                    <div class="section-header text-center">
-                        <h2>a profile of entrepreneurial vision</h2>
-                    </div>
-                    <div class="spacer-small"></div>
-                    <div class="section-sub-header text-center">
-                        Meet <b>Karan</b>, a student participating in an entrepreneurship skills
-                        programme at his school. Karan is fascinated by history and he
-                        loves talking about the intriguing historical figures and events
-                        that have shaped the world. His peers appreciate his style of
-                        articulation which leads him to wonder if he can reach out to a
-                        larger audience through social media and monetize his content.
-                    </div>
-                    <div class="spacer-small"></div>
-                    <div class="section-sub-header text-center">
-                        Here's what he does to turn his passion into a sustainable income:
-                    </div>
-                    <div class="spacer-small"></div>
-                    <div class="timeline-section text-center display-flex position-relative">
-                        <div class="w-25 timeline-section-inner">
-                            <div class="timeline-icon">
-                                <img src="./assets/images/ico_market_research.png" alt="Market research" width="90"
-                                    height="90">
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-title">
-                                    Market research
-                                </div>
-                                <div class="timeline-desc">
-                                    Karan speaks to his
-                                    friends and gauges their
-                                    interest in learning about
-                                    history through
-                                    short-form videos.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-25 timeline-section-inner">
-                            <div class="timeline-icon">
-                                <img src="./assets/images/ico_businessplan.png" alt="business plan" width="90"
-                                    height="90">
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-title">
-                                    Business plan
-                                </div>
-                                <div class="timeline-desc">
-                                    Karan formulates a
-                                    strategy to start an
-                                    Instagram page and
-                                    YouTube channel to
-                                    feature his videos
-                                    every week.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-25 timeline-section-inner">
-                            <div class="timeline-icon">
-                                <img src="./assets/images/ico_marketingstrategy.png" alt=" Marketing strategy" width="90"
-                                    height="90">
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-title">
-                                    Marketing strategy
-                                </div>
-                                <div class="timeline-desc">
-                                    Karan explores branding
-                                    and marketing strategies
-                                    to understand the best fit
-                                    to reach his target
-                                    audience.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="w-25 timeline-section-inner">
-                            <div class="timeline-icon">
-                                <img src="./assets/images/ico_investor.png" alt="Investor pitching" width="90"
-                                    height="90">
-                            </div>
-                            <div class="timeline-content">
-                                <div class="timeline-title">
-                                    Investor pitching
-                                </div>
-                                <div class="timeline-desc">
-                                    Karan offers investors an
-                                    opportunity to sponsor his
-                                    channel thereby reaching
-                                    out to the teenage
-                                    demographic.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="note-warning text-center">
-                *The character of Karan is a fictional example created solely for illustrative purposes.
-            </div>
         </div>
     </div>
-</div>
-<div class="spacer"></div>
-<div id="section-8" class="section testimonial-slider-block">
-    <app-testimonials></app-testimonials>
-</div>
-<div class="spacer"></div>
-<div id="section-9" class="section about-us">
-    <div class="container position-relative section-inner">
-        <div class="section-header text-center">
-            <h2>about us</h2>
+    <div class="spacer"></div>
+    <div id="section-5" class="section founders-experts">
+        <app-founders></app-founders>
+    </div>
+    <div class="spacer"></div>
+    <div id="section-6" class="section showcase-excellence">
+        <div class="container position-relative section-inner">
+            <div class="section-header text-center">
+                <h2>a showcase of entrepreneurial excellence</h2>
+            </div>
+            <div class="spacer-small"></div>
+            <div class="section-sub-header text-center">
+                We offer students a platform to showcase their entrepreneurial
+                ideas and competencies at a national level in three challenging
+                stages, designed to foster collaboration, networking and
+                presentation skills.
+            </div>
+            <div class="spacer-small"></div>
+            <app-entrepreneurial-excellence></app-entrepreneurial-excellence>
         </div>
+    </div>
+    <div class="spacer"></div>
+    <div id="section-7" class="section skill-set">
+        <div class="container position-relative section-inner">
+            <div class="section-header text-center">
+                <h2>students develop a skill-set for entrepreneurial thinking</h2>
+            </div>
+            <div class="spacer-small"></div>
+            <div class="section-sub-header text-center">
+                We equip students with the essential skills needed to approach
+                challenges with an entrepreneurial mindset, fostering a culture of
+                continuous learning and exploration.
+            </div>
+            <div class="spacer-small"></div>
+            <div class="section-content">
+                <div class="five-column-block display-flex">
+                    <div class="w-20 text-center">
+                        <div class="tab-image-block">
+                            <img src="./assets/images/ico_skills_criticalthinking.png" alt="Critical Thinking">
+                        </div>
+                        <div class="tab-header-description">
+                            Critical Thinking
+                        </div>
+                    </div>
+                    <div class="w-20 text-center">
+                        <div class="tab-image-block">
+                            <img src="./assets/images/ico_strategic_planning.png" alt="Strategic Planning">
+                        </div>
+                        <div class="tab-header-description">
+                            Strategic Planning
+                        </div>
+                    </div>
+                    <div class="w-20 text-center">
+                        <div class="tab-image-block">
+                            <img src="./assets/images/ico_skills_problemsolvin.png" alt="Problem Solving">
+                        </div>
+                        <div class="tab-header-description">
+                            Problem Solving
+                        </div>
+                    </div>
+                    <div class="w-20 text-center">
+                        <div class="tab-image-block">
+                            <img src="./assets/images/ico_skills_projectmgt.png" alt="Project Management">
+                        </div>
+                        <div class="tab-header-description">
+                            Project Management
+                        </div>
+                    </div>
+                    <div class="w-20 text-center">
+                        <div class="tab-image-block">
+                            <img src="./assets/images/ico_course_leadershipskills.png" alt="Leadership Skills">
+                        </div>
+                        <div class="tab-header-description">
+                            Leadership Skills
+                        </div>
+                    </div>
+                </div>
+                <div class="spacer"></div>
+                <div class="timeline-block position-relative green-border two-pixel-border border-top-right-radius-100">
+                    <div class="tab-content-image-block">
+                        <img src="./assets/images/ico_enthreprinor.png" alt="">
+                    </div>
+                    <div class="tab-content-content-block">
+                        <div class="section-header text-center">
+                            <h2>a profile of entrepreneurial vision</h2>
+                        </div>
+                        <div class="spacer-small"></div>
+                        <div class="section-sub-header text-center">
+                            Meet <b>Karan</b>, a student participating in an entrepreneurship skills
+                            programme at his school. Karan is fascinated by history and he
+                            loves talking about the intriguing historical figures and events
+                            that have shaped the world. His peers appreciate his style of
+                            articulation which leads him to wonder if he can reach out to a
+                            larger audience through social media and monetize his content.
+                        </div>
+                        <div class="spacer-small"></div>
+                        <div class="section-sub-header text-center">
+                            Here's what he does to turn his passion into a sustainable income:
+                        </div>
+                        <div class="spacer-small"></div>
+                        <div class="timeline-section text-center display-flex position-relative">
+                            <div class="w-25 timeline-section-inner">
+                                <div class="timeline-icon">
+                                    <img src="./assets/images/ico_market_research.png" alt="Market research" width="90"
+                                        height="90">
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">
+                                        Market research
+                                    </div>
+                                    <div class="timeline-desc">
+                                        Karan speaks to his
+                                        friends and gauges their
+                                        interest in learning about
+                                        history through
+                                        short-form videos.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-25 timeline-section-inner">
+                                <div class="timeline-icon">
+                                    <img src="./assets/images/ico_businessplan.png" alt="business plan" width="90"
+                                        height="90">
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">
+                                        Business plan
+                                    </div>
+                                    <div class="timeline-desc">
+                                        Karan formulates a
+                                        strategy to start an
+                                        Instagram page and
+                                        YouTube channel to
+                                        feature his videos
+                                        every week.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-25 timeline-section-inner">
+                                <div class="timeline-icon">
+                                    <img src="./assets/images/ico_marketingstrategy.png" alt=" Marketing strategy"
+                                        width="90" height="90">
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">
+                                        Marketing strategy
+                                    </div>
+                                    <div class="timeline-desc">
+                                        Karan explores branding
+                                        and marketing strategies
+                                        to understand the best fit
+                                        to reach his target
+                                        audience.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="w-25 timeline-section-inner">
+                                <div class="timeline-icon">
+                                    <img src="./assets/images/ico_investor.png" alt="Investor pitching" width="90"
+                                        height="90">
+                                </div>
+                                <div class="timeline-content">
+                                    <div class="timeline-title">
+                                        Investor pitching
+                                    </div>
+                                    <div class="timeline-desc">
+                                        Karan offers investors an
+                                        opportunity to sponsor his
+                                        channel thereby reaching
+                                        out to the teenage
+                                        demographic.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="note-warning text-center">
+                    *The character of Karan is a fictional example created solely for illustrative purposes.
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer"></div>
+    <div id="section-8" class="section testimonial-slider-block">
+        <app-testimonials></app-testimonials>
+    </div>
+    <div class="spacer"></div>
+    <div id="section-9" class="section about-us">
+        <div class="container position-relative section-inner">
+            <div class="section-header text-center">
+                <h2>about us</h2>
+            </div>
 
-        <div class="spacer-small"></div>
-        <div class="section-content">
-            <div class="display-flex two-col-block">
-                <div class="col w-50">
-                    <div class="about-us-image-content-block">
-                        <div class="about-image-block border-bottom-right-radius-50">
-                            <img src="./assets/images/ico_aboutus_GSL.png" alt="">
-                        </div>
-                        <div class="about-content-block">
-                            Backed by the iconic Arvind Mafatlal Group with over <b>100
-                                years of legacy</b>, Get Set Learn is transforming the <b>global
-                                education</b> landscape by curating the K-12 learning needs of
-                            schools and students.
-                            <br>
-                            <br>
-                            Aligned with the guidelines set by NEP 2020 and NCF 2023,
-                            Get Set Learn’s key offerings include <b>21st century
-                                skill-building Programmes</b> in STEM & Robotics, AI,
-                            Entrepreneurship and Life Skills for students in K-12.
+            <div class="spacer-small"></div>
+            <div class="section-content">
+                <div class="display-flex two-col-block">
+                    <div class="col w-50">
+                        <div class="about-us-image-content-block">
+                            <div class="about-image-block border-bottom-right-radius-50">
+                                <img src="./assets/images/ico_aboutus_GSL.png" alt="">
+                            </div>
+                            <div class="about-content-block">
+                                Backed by the iconic Arvind Mafatlal Group with over <b>100
+                                    years of legacy</b>, Get Set Learn is transforming the <b>global
+                                    education</b> landscape by curating the K-12 learning needs of
+                                schools and students.
+                                <br>
+                                <br>
+                                Aligned with the guidelines set by NEP 2020 and NCF 2023,
+                                Get Set Learn’s key offerings include <b>21st century
+                                    skill-building Programmes</b> in STEM & Robotics, AI,
+                                Entrepreneurship and Life Skills for students in K-12.
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col w-50">
-                    <div class="about-us-image-content-block">
-                        <div class="about-image-block border-bottom-left-radius-50">
-                            <img src="./assets/images/Ico_aboutus_cambridge.png" alt="">
-                        </div>
-                        <div class="about-content-block">
-                            Cambridge University Press & Assessment is a part of the
-                            University of Cambridge, one of the world’s leading
-                            universities trusted for excellence in education.
-                            <br>
-                            <br>
-                            As a leading <b>education solution provider</b>, Cambridge
-                            provides educational materials, assessments, resources and
-                            services to teachers and learners, from ages 3-19, in <b>over 160
-                                countries</b>.
+                    <div class="col w-50">
+                        <div class="about-us-image-content-block">
+                            <div class="about-image-block border-bottom-left-radius-50">
+                                <img src="./assets/images/Ico_aboutus_cambridge.png" alt="">
+                            </div>
+                            <div class="about-content-block">
+                                Cambridge University Press & Assessment is a part of the
+                                University of Cambridge, one of the world’s leading
+                                universities trusted for excellence in education.
+                                <br>
+                                <br>
+                                As a leading <b>education solution provider</b>, Cambridge
+                                provides educational materials, assessments, resources and
+                                services to teachers and learners, from ages 3-19, in <b>over 160
+                                    countries</b>.
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div class="spacer"></div>
+    <div id="section-10" class="section footer">
+        <app-footer></app-footer>
+    </div>
+    <div class="spacer"></div>
 </div>
-<div class="spacer"></div>
-<div id="section-10" class="section footer">
-   <app-footer></app-footer>
-</div>
-<div class="spacer"></div>

@@ -1249,6 +1249,13 @@ img {
     border-top-right-radius: 30px;
 }
 
+::ng-deep {
+    .zb-btone-staff.pos-rel {
+        display: none !important;
+    }
+}
+
+
 @media(max-width: 1270px) {
     .footer-block-inner .col.w-50:first-child {
         width: 45%;
@@ -1715,13 +1722,6 @@ img {
         font-size: var(--font-size-22);
     }
 
-    select,
-    input[type="text"],
-    textarea {
-        padding: 10px 10px;
-        font-size: 14px;
-    }
-
     .testimonials .owl-carousel.owl-theme.owl-loaded.owl-drag {
         height: 510px;
     }
@@ -1820,5 +1820,8 @@ img {
         width: 85%;
     }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.background-box {
+    padding: 20px 10px;
+}

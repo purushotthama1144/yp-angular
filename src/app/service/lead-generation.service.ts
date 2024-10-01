@@ -7,11 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class LeadGenerationService {
 
-  baseurl = 'http://20.244.106.232/'
+  baseurl = 'http://localhost:8080/users'
+  // baseurl = 'http://20.244.106.232/'
 
   constructor(private httpClient: HttpClient) { }
 
   sendFormData(formData): Observable<any> {
-    return this.httpClient.post(`${this.baseurl}users`, formData);
+    return this.httpClient.post(`${this.baseurl}/create`, formData);
   }
 }

@@ -57,7 +57,6 @@ export class HomeComponent implements OnInit {
   }
 
   receiveScheduleCallStatus(status: boolean) {
-    console.log("status",status)
     this.schedule_call = status;
   }
 
